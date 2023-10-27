@@ -1,0 +1,50 @@
+body {
+    background-image: linear-gradient(to top right, #6ecfba, #8b76ec);
+    font-family: Verdana;
+    text-align: center;
+}
+h3{
+    text-align: center;
+    size: 10px;
+    color: #421ee4;
+}
+#survey-form {
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+    max-width: 700px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.form-control {
+    text-align: center;
+    margin-bottom: 25px;
+    margin-left: 20px;
+}
+.container{
+   text-align: center;
+    margin-top: 50px;
+    display: block;
+    width: 30%;
+    color: black;
+    /* border: 1px solid; */
+    border-color: blanchedalmond;
+    background-color: white;
+    
+}
+button {
+    margin-top: 40px;
+    width: 25%;
+    height:max-content;
+    background-image: linear-gradient(to bottom right, #6fcad6, #9085c1);
+    border-color: #1fb3e0 !important;
+    font-weight: bold;
+    outline: rgb(135, 30, 233) 10px !important;
+    accent-color: rgb(61, 50, 226) !important;
+    -webkit-tap-highlight-color: transparent
+}
+

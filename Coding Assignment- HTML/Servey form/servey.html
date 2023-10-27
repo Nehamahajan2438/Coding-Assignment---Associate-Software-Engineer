@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style1.css">
+    <title>Servey Form</title>
+</head>
+<body>
+    <form name= "servey" align="center" id="survey-form" class="container">
+        <h3>SERVEY FORM</h3>
+        <table cellspacing="10px" align="center">
+            <tr>
+                <td>
+                    <label for="fname">First Name </label>
+                </td>
+                <td><input type="text" id="firstname" name="firstname" required><br></td>
+            </tr>
+            <tr>
+                <td><label for="Last Name">Last Name </label></td>
+                <td><input type="text" id="lastname" name="lastname"  required><br></td>
+            </tr>
+            <tr>
+                <td>  <label for="dob">Date of Birth </label></td>
+                <td><input type="date" id="dob" name="dob" min="1999-01-01" max="2023-10-25" required><br></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-control">
+                    <label for="country">Country </label></td>
+                       <td> <select id="country" name="country" required>
+                            <option value="Afganistan">Afganistan</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Argentica">Argentica</option>
+                            <option value="Bangladesh">Bangladesh</option>
+                            <option value="Bhutan">Bhutan</option>
+                            <option value="Brazil">Brazil</option>
+                            <option value="Canada">Canada</option>
+                            <option value="China">China</option>
+                            <option value="Egypt">Egypt</option>
+                            <option value="France">France</option>
+                            <option value="Germany">Germany</option>
+                            <option value="Greece">Greece</option>
+                            <option value="Hong">Hong Kong</option>
+                            <option value="India">India</option>
+                            <option value="Japan">Japan</option>
+                            <option value="Kuwait">Kuwait</option>
+                            <option value="Maldives">Maldives</option>
+                            <option value="Nepal">Nepal</option>
+                            <option value="Oman">Oman</option>
+                            <option value="Pakistan">Pakistan</option>
+                            <option value="Qatar">Qatar</option>
+                            <option value="Romania">Romania</option>
+                            <option value="Spain">Spain</option>
+                            <option value="Turkey">Turkey</option>
+                            <option value="USA">USA</option>
+                            <option value="Uk">Uk</option>
+                       </select><br></select></td>
+                </td>
+            </tr>
+            <tr>
+                    <div id="checkboxes" class="container bottom-space">
+                <td><label for="gender">Gender </label></td>
+                <div id="checkb">
+                <td><label><input type="checkbox" class="checkoption" value="Male" id="gender" />Male </label>
+                    <label><input type="checkbox" class="checkoption" value="Female" id="gender" />Female </label>
+                    <label><input type="checkbox" class="checkoption" value="Other" id="gender" />Other </label><br></td></div>
+                </div>
+            </tr>
+            <tr>
+                <div class="form-control">
+                <td><label for="profession">profession </label></td>
+                <td><input type="text" id="profession" name="profession" required><br></td></div>
+            </tr>
+            <tr>
+                <div class="form-control">
+                <td><label for="email">Email </label></td>
+                <td><input type="email" id="email" name="email" required><br></td></div>
+            </tr>
+            <tr>
+                <td><label for="mobile">Mobile No. </label></td>
+                <td><input type="tel" id="mobile" name="mobile" required><br></td>
+            </tr>
+        </table>
+        
+              <button onclick="getservey();">submit</button>
+            <button type="reset">Reset</button>
+        </div>
+        </div>
+        </form>
+
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        
+        $(document).ready(function(){
+
+            $('.checkoption').click(function() {
+              $('.checkoption').not(this).prop('checked', false);
+            });
+
+        });
+    
+      function getservey()
+          {
+           
+            var firstname  = document.forms["servey"]["firstname"].value;
+            var lastname  = document.forms["servey"]["lastname"].value;
+            var dob = document.forms["servey"]["dob"].value;
+            var country = document.forms["servey"]["country"].value;
+            var gender = null; 
+            var inputElements = document.getElementsByClassName('checkoption');
+            for(var i=0; inputElements[i]; ++i){
+                  if(inputElements[i].checked){
+                       gender = inputElements[i].value;
+                       break;
+                  }
+            }
+
+            var profession = document.forms["servey"]["profession"].value;
+            var email = document.forms["servey"]["email"].value;
+            var mobile = document.forms["servey"]["mobile"].value;
+            
+            if(firstname.length==0){
+                alert("Enter First name");
+                return
+            }
+            else if(lastname.length==0){
+                alert("Enter Last name");
+                return
+            }
+            else if(dob.length==0){
+                alert("Select Date of Birth");
+                return
+            }
+            else if(country.length==0){
+                alert("Select Country");
+                return
+            }
+            else if(gender.length==0){
+                alert("Select gender");
+                return
+            }
+            else if(profession.length==0){
+                alert("Enter profession");
+                return
+            }
+            else if(email.length==0){
+                alert("Enter Email");
+                return
+            }
+            else if(mobile==0){
+                alert("Enter mobile number");
+            }
+             alert("First Name :    " +firstname +"\n"+
+                   "Last Name :   " +lastname +"\n"+
+                   "Date of Birth :   " +dob +"\n"+
+                   "Country :   " +country +"\n"+
+                   "Gender :   " +gender+"\n"+
+                   "Profession :   " +profession +"\n"+
+                   "Email :   " +email +"\n"+
+                   "Mobile No. :   " +mobile);
+
+        }
+    </script>
+  </body>
+</html>
